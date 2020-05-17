@@ -1,0 +1,19 @@
+{
+  "name": "threejs-stuff",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Experiments with ThreeJs ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theProgrammerDavid/three-js-samples.git"
+  },
+  "author": "David Velho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theProgrammerDavid/three-js-samples/issues"
+  },
+  "homepage": "https://github.com/theProgrammerDavid/three-js-samples#readme"
+}
