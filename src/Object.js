@@ -1,5 +1,5 @@
-import * as THREE from 'three';
-
+//import * as THREE from 'three';
+const THREE = require('three');
 class Object extends THREE.Mesh {
     constructor() {
         super();
@@ -25,4 +25,4 @@ class Object extends THREE.Mesh {
         this.position.z = z;
     }
 }
-export default {Object};
+module.exports =Object;

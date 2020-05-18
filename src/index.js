@@ -1,7 +1,7 @@
 import _ from 'lodash';
-import * as THREE from 'three';
 
-const Object = require('Object');
+
+const Object = require('./Object');
 
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
