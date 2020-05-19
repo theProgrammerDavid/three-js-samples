@@ -7,5 +7,6 @@
 4. Orbit Controls
 
 ## How To Run
-1. Run the ```start.sh``` script
+1. npm run build
+2. npm start
 2. Navigate to ```localhost:8090``` in your browser
