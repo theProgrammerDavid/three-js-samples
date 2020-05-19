@@ -1,14 +1,8 @@
-//import * as THREE from 'three';
-const THREE = require('three');
 class Object extends THREE.Mesh {
     constructor() {
         super();
     }
-    // constructor(geometry, mesh) {
-    //     this.geometry = geometry;
-    //     this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-    // }
     addGeometry(geometry) {
         this.geometry = geometry;
     }
