@@ -4,11 +4,11 @@ class Object extends THREE.Mesh {
     constructor() {
         super();
     }
-    constructor(geometry, mesh) {
-        this.geometry = geometry;
-        this.mesh = new THREE.Mesh(this.geometry, this.material);
+    // constructor(geometry, mesh) {
+    //     this.geometry = geometry;
+    //     this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-    }
+    // }
     addGeometry(geometry) {
         this.geometry = geometry;
     }
