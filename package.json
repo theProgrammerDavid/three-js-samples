@@ -4,6 +4,7 @@
   "private": true,
   "description": "Experiments with ThreeJs ",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/theProgrammerDavid/three-js-samples#readme",
   "dependencies": {
     "lodash": "^4.17.15",
+    "node-static": "^0.7.11",
     "three": "^0.116.1"
   },
   "devDependencies": {
