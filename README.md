@@ -7,6 +7,5 @@
 4. Orbit Controls
 
 ## How To Run
-1. `` npm i ``
-2. ``npm run build``
-3. Serve the static files in the ``/dist`` directory
+1. Run the ```start.sh``` script
+2. Navigate to ```localhost:8090``` in your browser
