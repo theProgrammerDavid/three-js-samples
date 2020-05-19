@@ -13,14 +13,11 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 var axes = new THREE.AxisHelper(20);
 scene.add(axes);
 
-var planeGeometry = new THREE.PlaneGeometry(60, 20, 1, 1);
-var planeMaterial = new THREE.MeshBasicMaterial({ color: 0xcccccc });
-var plane = new THREE.Mesh(planeGeometry, planeMaterial);
-
+var plane = new Object();
+plane.addGeometry(new THREE.PlaneGeometry(60, 20, 1, 1));
+plane.addMaterial(new THREE.MeshBasicMaterial({ color: 0xcccccc }) );
+plane.setPosition(15,0,0);
 plane.rotation.x = -0.5 * Math.PI;
-plane.position.x = 15;
-plane.position.y = 0;
-plane.position.z = 0;
 
 scene.add(plane);
 var cubeGeometry = new THREE.BoxGeometry(4, 4, 4)
