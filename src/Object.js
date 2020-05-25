@@ -30,11 +30,12 @@ class Object extends THREE.Mesh {
      */
 
     setShadow(shadow) {
-        if (shadow) {
+        if (typeof shadow === 'string') {
+            
             if (shadow === 'receive') {
                 this.receiveShadow = true;
             }
-            else if(shadow === 'cast') {
+            else if (shadow === 'cast') {
                 this.castShadow = true;
             }
         }
