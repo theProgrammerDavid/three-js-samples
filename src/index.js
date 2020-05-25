@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 
 const Object = require('./Object');
-
+const lighting = require('./lighting');
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 var renderer = new THREE.WebGLRenderer();
@@ -47,7 +47,7 @@ ob1.setPosition(20,4,2);
 
 
 scene.add(ob1);
-
+lighting();
 camera.position.x = -30;
 camera.position.y = 40;
 camera.position.z = 30;
