@@ -1,5 +1,8 @@
 # ThreeJS Samples
 
+# Note: 
+I know I'm not supposed to push the ```dist``` folder to the repo.
+
 ## Dependencies
 1. THREE.js 
 2. Webpack
