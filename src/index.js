@@ -40,20 +40,20 @@ cube.createMesh();
 cube.setPosition(-4, 3, 0);
 scene.add(cube);
 
-var ob1 = new Object();
-//ob1.castShadow = true;
-ob1.setShadow('cast');
-ob1.addGeometry(new THREE.SphereGeometry(4, 20, 20));
-ob1.addMaterial(new THREE.MeshLambertMaterial({
+var sphere = new Object();
+//sphere.castShadow = true;
+sphere.setShadow('cast');
+sphere.addGeometry(new THREE.SphereGeometry(4, 20, 20));
+sphere.addMaterial(new THREE.MeshLambertMaterial({
     color:
         0x7777ff
 }));
-ob1.createMesh();
+sphere.createMesh();
 
-ob1.setPosition(20, 4, 2);
+sphere.setPosition(20, 4, 2);
 
 
-scene.add(ob1);
+scene.add(sphere);
 lighting(scene);
 
 camera.position.x = -30;
@@ -61,13 +61,21 @@ camera.position.y = 40;
 camera.position.z = 30;
 camera.lookAt(scene.position);
 
+var step = 0;
 
 function renderScene() {
-   stats.update();
+    stats.update();
+    cube.rotation.x += 0.05;
+
+    step += 0.04;
+    sphere.position.x = 20 + (10 * (Math.cos(step)));
+    sphere.position.y = 2 + (10 * Math.abs(Math.sin(step)));
+
+
     requestAnimationFrame(renderScene);
-    
+
     renderer.render(scene, camera)
-    
+
 }
 
 
