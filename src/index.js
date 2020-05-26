@@ -68,7 +68,7 @@ function renderScene() {
     cube.rotation.x += 0.05;
 
     step += 0.04;
-    sphere.position.x = 20 + (10 * (Math.cos(step)));
+    sphere.position.x = 20 + (10 * (Math.tan(step/10)));
     sphere.position.y = 2 + (10 * Math.abs(Math.sin(step)));
 
 
