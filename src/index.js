@@ -1,6 +1,6 @@
 const Object = require('./Object');
 const lighting = require('./lighting');
-//const stats = require('./stats')();
+const stats = require('./stats')();
 
 
 
@@ -61,7 +61,7 @@ camera.position.y = 40;
 camera.position.z = 30;
 camera.lookAt(scene.position);
 
-var stats = initStats();
+
 function renderScene() {
    stats.update();
     requestAnimationFrame(renderScene);
