@@ -61,9 +61,9 @@ camera.position.y = 40;
 camera.position.z = 30;
 camera.lookAt(scene.position);
 
-
+var stats = initStats();
 function renderScene() {
-   // stats.update
+   stats.update();
     requestAnimationFrame(renderScene);
     
     renderer.render(scene, camera)
