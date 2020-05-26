@@ -1,11 +1,12 @@
-import _ from 'lodash';
-
-
 const Object = require('./Object');
 const lighting = require('./lighting');
+//const stats = require('./stats')();
+
+
+
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-var renderer = new THREE.WebGLRenderer({antialias: true});
+var renderer = new THREE.WebGLRenderer({ antialias: true });
 
 renderer.setClearColor(0x222222, 1);
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -60,5 +61,16 @@ camera.position.y = 40;
 camera.position.z = 30;
 camera.lookAt(scene.position);
 
+
+function renderScene() {
+   // stats.update
+    requestAnimationFrame(renderScene);
+    
+    renderer.render(scene, camera)
+    
+}
+
+
 document.getElementById("WebGL-output").appendChild(renderer.domElement);
 renderer.render(scene, camera);
+renderScene();
