@@ -1,7 +1,7 @@
 var controls = new (function () {
     this.rotationSpeed = 0.02;
     this.bouncingSpeed = 0.03;
-    this.lightMapMultiplier = 2;
+    this.lightMapMultiplier = 6;
   })();
 
   var gui = new dat.GUI();
