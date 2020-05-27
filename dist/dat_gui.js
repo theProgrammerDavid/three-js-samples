@@ -14,6 +14,7 @@ var controls = new (function () {
   gui.add(controls, "rotationSpeed", 0, 0.5);
   gui.add(controls, "bouncingSpeed", 0, 0.5);
   gui.add(controls, "lightMapMultiplier", 1, 15, 1);
+  gui.add(controls, "dynamicUpdate", true,false)
   gui.add(obj, "updateShadow");
 
   function updateLighting() {
