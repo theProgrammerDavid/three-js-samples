@@ -13,3 +13,6 @@ I know I'm not supposed to push the ```dist``` folder to the repo.
 1. npm run build
 2. npm start
 2. Navigate to ```localhost:8090``` in your browser
+
+## Interacting with the scene
+* Any change to lightint properties needs the scene will be drawn automatically.
