@@ -27,16 +27,10 @@
     <script>
       function init() {}
       window.onload = init;
-
-      var controls = new function() {
-this.rotationSpeed = 0.02;
-this.bouncingSpeed = 0.03;
-}
-
-var gui = new dat.GUI();
-gui.add(controls, 'rotationSpeed', 0, 0.5);
-gui.add(controls, 'bouncingSpeed', 0, 0.5);
+      var scene;
+      
     </script>
+    <script src="./dat_gui.js"></script>
     <script src="./main.js"></script>
   </body>
 </html>
