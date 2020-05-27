@@ -65,11 +65,16 @@ var step = 0;
 
 function renderScene() {
     stats.update();
-    cube.rotation.x += 0.05;
-
-    step += 0.04;
-    sphere.position.x = 20 + (10 * (Math.tan(step/10)));
+    cube.rotation.x += controls.rotationSpeed;
+    cube.rotation.y += controls.rotationSpeed;
+    cube.rotation.z += controls.rotationSpeed;
+    step += controls.bouncingSpeed;
+    sphere.position.x = 20 + (10 * (Math.cos(step)));
     sphere.position.y = 2 + (10 * Math.abs(Math.sin(step)));
+
+    // step += 0.04;
+    // sphere.position.x = 20 + (10 * (Math.tan(step / 10)));
+    // sphere.position.y = 2 + (10 * Math.abs(Math.sin(step)));
 
 
     requestAnimationFrame(renderScene);
