@@ -4,7 +4,7 @@ const stats = require('./stats')();
 
 
 
-var scene = new THREE.Scene();
+ scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 var renderer = new THREE.WebGLRenderer({ antialias: true });
 
@@ -65,17 +65,15 @@ var step = 0;
 
 function renderScene() {
     stats.update();
+    
     cube.rotation.x += controls.rotationSpeed;
     cube.rotation.y += controls.rotationSpeed;
     cube.rotation.z += controls.rotationSpeed;
+
     step += controls.bouncingSpeed;
+
     sphere.position.x = 20 + (10 * (Math.cos(step)));
     sphere.position.y = 2 + (10 * Math.abs(Math.sin(step)));
-
-    // step += 0.04;
-    // sphere.position.x = 20 + (10 * (Math.tan(step / 10)));
-    // sphere.position.y = 2 + (10 * Math.abs(Math.sin(step)));
-
 
     requestAnimationFrame(renderScene);
 
