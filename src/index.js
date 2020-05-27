@@ -4,7 +4,7 @@ const stats = require('./stats')();
 
 
 
- scene = new THREE.Scene();
+scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 var renderer = new THREE.WebGLRenderer({ antialias: true });
 
@@ -31,7 +31,7 @@ scene.add(plane);
 var cube = new Object();
 //cube.castShadow = true;
 cube.setShadow('cast');
-cube.addGeometry(new THREE.BoxGeometry(4, 4, 4,10,10))
+cube.addGeometry(new THREE.BoxGeometry(4, 4, 4, 10, 10))
 cube.addMaterial(new THREE.MeshLambertMaterial({
     color:
         0xff0000
@@ -65,7 +65,10 @@ var step = 0;
 
 function renderScene() {
     stats.update();
-    updateLighting();
+
+    if (controls.dynamicUpdate)
+        updateLighting();
+
     cube.rotation.x += controls.rotationSpeed;
     cube.rotation.y += controls.rotationSpeed;
     cube.rotation.z += controls.rotationSpeed;
