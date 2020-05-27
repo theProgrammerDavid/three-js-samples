@@ -2,6 +2,7 @@ var controls = new (function () {
     this.rotationSpeed = 0.02;
     this.bouncingSpeed = 0.03;
     this.lightMapMultiplier = 6;
+    this.dynamicUpdate=false;
   })();
 
   var gui = new dat.GUI();
@@ -17,8 +18,7 @@ var controls = new (function () {
 
   function updateLighting() {
     var light=scene.getObjectByName("light");
-    light.shadowMapHeight=128*controls.lightMapMultiplier;
-    light.shadowMapWidth=128*controls.lightMapMultiplier;
+    light.shadow.mapSize.set(128*controls.lightMapMultiplier, 128*controls.lightMapMultiplier);
     light.shadow.map.dispose();
     light.shadow.map=null;
   }
