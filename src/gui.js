@@ -1,19 +1,37 @@
+var gui = new dat.GUI();
 class GUI {
+
+
+    addGUI() {
+        gui.add(this.controls, "rotationSpeed", 0, 0.5);
+        gui.add(this.controls, "bouncingSpeed", 0, 0.5);
+        gui.add(this.controls, "lightMapMultiplier", 1, 15, 1);
+        gui.add(this.controls, "dynamicUpdate", true, false)
+        gui.add(this.obj, "updateShadow");
+        gui.add(this.physics, "addCubes");
+        gui.add(this.info, "info");
+    }
     constructor() {
         this.controls = {
-            rotationSpeed = 0.02,
-            bouncingSpeed = 0.03,
-            lightMapMultiplier = 6,
-            dynamicUpdate = false
+            'rotationSpeed': 0.02,
+            'bouncingSpeed': 0.03,
+            'lightMapMultiplier': 6,
+            'dynamicUpdate': false
         };
 
         this.obj = {
             updateShadow: function () {
-                var light=scene.getObjectByName("light");
-                light.shadow.mapSize.set(128*this.controls.lightMapMultiplier, 128*this.controls.lightMapMultiplier);
+                var light = scene.getObjectByName("light");
+
+                light.shadow.mapSize.set(128 * this.controls['lightMapMultiplier'], 128 * this.controls['lightMapMultiplier']);
                 light.shadow.map.dispose();
-                light.shadow.map=null;
+                light.shadow.map = null;
             },
+            enableGamma: function () {
+                console.log('lol')
+                renderer.gammaInput = true;
+                renderer.gammaOutput = true;
+            }
         };
 
         this.info = {
@@ -28,18 +46,29 @@ class GUI {
             }
         }
 
-        addGUI();
-    }
+        let lighting = gui.addFolder('Lighting');
+        let physics = gui.addFolder('Physics');
+        let simulation = gui.addFolder('Simulation');
 
-    addGUI() {
-        gui.add(this.controls, "rotationSpeed", 0, 0.5);
-        gui.add(this.controls, "bouncingSpeed", 0, 0.5);
-        gui.add(this.controls, "lightMapMultiplier", 1, 15, 1);
-        gui.add(this.controls, "dynamicUpdate", true, false)
-        gui.add(this.obj, "updateShadow");
-        gui.add(this.physics, "addCubes");
+        simulation.add(this.controls, "rotationSpeed", 0, 0.5);
+        simulation.add(this.controls, "bouncingSpeed", 0, 0.5);
+
+
+        let shadowController = lighting.add(this.controls, "lightMapMultiplier", 1, 15, 1);
+        shadowController.onChange((value) => {
+            var light = scene.getObjectByName("light");
+
+            light.shadow.mapSize.set(128 * value, 128 * value);
+            light.shadow.map.dispose();
+            light.shadow.map = null;
+        })
+        lighting.add(this.obj, "enableGamma");
+        //lighting.open();
+        physics.add(this.physics, "addCubes");
         gui.add(this.info, "info");
     }
+
+
 }
 
 module.exports = new GUI();
