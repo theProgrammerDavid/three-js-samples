@@ -1,7 +1,7 @@
 const Object = require('./Object');
 const lighting = require('./lighting');
 const stats = require('./stats')();
-
+var GUI = require('./gui')
 
 
 scene = new THREE.Scene();
@@ -51,7 +51,8 @@ sphere.addMaterial(new THREE.MeshLambertMaterial({
 sphere.createMesh();
 
 sphere.setPosition(20, 4, 2);
-
+renderer.gammaInput = true;
+renderer.gammaOutput = true;
 
 scene.add(sphere);
 lighting(scene);
@@ -67,11 +68,11 @@ function renderScene() {
     stats.update();
 
 
-    cube.rotation.x += controls.rotationSpeed;
-    cube.rotation.y += controls.rotationSpeed;
-    cube.rotation.z += controls.rotationSpeed;
+    cube.rotation.x += GUI.controls.rotationSpeed;
+    cube.rotation.y += GUI.controls.rotationSpeed;
+    cube.rotation.z += GUI.controls.rotationSpeed;
 
-    step += controls.bouncingSpeed;
+    step += GUI.controls.bouncingSpeed;
 
     sphere.position.x = 20 + (10 * (Math.cos(step)));
     sphere.position.y = 2 + (10 * Math.abs(Math.sin(step)));
