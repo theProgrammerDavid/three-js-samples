@@ -1,16 +1,6 @@
 var gui = new dat.GUI();
 class GUI {
 
-
-    addGUI() {
-        gui.add(this.controls, "rotationSpeed", 0, 0.5);
-        gui.add(this.controls, "bouncingSpeed", 0, 0.5);
-        gui.add(this.controls, "lightMapMultiplier", 1, 15, 1);
-        gui.add(this.controls, "dynamicUpdate", true, false)
-        gui.add(this.obj, "updateShadow");
-        gui.add(this.physics, "addCubes");
-        gui.add(this.info, "info");
-    }
     constructor() {
         this.controls = {
             'rotationSpeed': 0.02,
@@ -27,11 +17,7 @@ class GUI {
                 light.shadow.map.dispose();
                 light.shadow.map = null;
             },
-            enableGamma: function () {
-                console.log('lol')
-                renderer.gammaInput = true;
-                renderer.gammaOutput = true;
-            }
+            
         };
 
         this.info = {
@@ -62,8 +48,7 @@ class GUI {
             light.shadow.map.dispose();
             light.shadow.map = null;
         })
-        lighting.add(this.obj, "enableGamma");
-        //lighting.open();
+       
         physics.add(this.physics, "addCubes");
         gui.add(this.info, "info");
     }
