@@ -66,8 +66,6 @@ var step = 0;
 function renderScene() {
     stats.update();
 
-    if (controls.dynamicUpdate)
-        updateLighting();
 
     cube.rotation.x += controls.rotationSpeed;
     cube.rotation.y += controls.rotationSpeed;
